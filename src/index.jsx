@@ -44,12 +44,12 @@ const history = syncHistoryWithStore(browserHistory, store);
 render((
     <Provider store={store}>
       <Router history={history}>
-          <Route path="/" component={App}>
-            <IndexRoute component={Home}/>
-            <Route path="beers" component={BeerListContainer}/>
-            <Route path="me" component={ProfileContainer}/>
-            <Route path="login" component={Auth}/>
-          </Route>
+        <Route path="/" component={App}>
+          <IndexRoute component={Home}/>
+          <Route path="beers" component={BeerListContainer}/>
+          <Route path="me" component={ProfileContainer}/>
+          <Route path="login" component={Auth}/>
+        </Route>
       </Router>
     </Provider>
 ), document.getElementById('root'));

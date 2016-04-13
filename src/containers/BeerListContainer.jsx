@@ -8,6 +8,15 @@ import {connect} from 'react-redux';
 import BeerList from '../components/BeerList.jsx';
 
 class BeerListContainer extends Component {
+  componentWillMount() {
+    const {setBeers} = this.props;
+
+    fetch('http://beers.theneva.com/beers')
+      .then(res => res.json())
+      .then(beers => setBeers(beers))
+      .catch(err => console.error('caught error', err));
+  }
+
   render() {
     const {beers} = this.props;
 
@@ -20,13 +29,21 @@ class BeerListContainer extends Component {
 }
 
 BeerListContainer.propTypes = {
-  beers: PropTypes.array.isRequired
+  beers: PropTypes.array
 };
 
 const mapStateToProps = state => ({
   ...state.beers
 });
 
+const mapDispatchToProps = dispatch => ({
+  setBeers: beers => dispatch({
+    type: 'set beers',
+    beers
+  })
+});
+
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(BeerListContainer);

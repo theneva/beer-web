@@ -9,6 +9,18 @@ export default class BeerList extends Component {
   render() {
     const {beers} = this.props;
 
+    if (!beers) {
+      return (
+          <h1>Loading beers…</h1>
+      );
+    }
+
+    if (beers.length === 0) {
+      return (
+          <h1>No beers to display!</h1>
+      );
+    }
+
     return (
       <div>
         <h1>Beers</h1>
@@ -23,7 +35,7 @@ export default class BeerList extends Component {
         <div>
           {beers.map(beer => (
               <BeerListItem {...beer}
-                  key={beer._id}/>
+                  key={beer.id}/>
           ))}
         </div>
       </div>
@@ -32,5 +44,5 @@ export default class BeerList extends Component {
 }
 
 BeerList.propTypes = {
-  beers: PropTypes.array.isRequired
+  beers: PropTypes.array
 };

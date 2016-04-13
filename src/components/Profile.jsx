@@ -13,7 +13,7 @@ export default class Profile extends Component {
 
           <h3>Saved beers</h3>
           <ul className="list-group">
-            {savedBeers.map(beer => <li key={beer._id} className="list-group-item">{beer.name}</li>)}
+            {savedBeers.map(beer => <li key={beer.id} className="list-group-item">{beer.name}</li>)}
           </ul>
         </div>
     );

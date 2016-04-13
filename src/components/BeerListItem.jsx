@@ -17,7 +17,7 @@ export default class BeerListItem extends Component {
 }
 
 BeerListItem.propTypes = {
-  _id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired
 };
