@@ -12,7 +12,7 @@ const staticPath = path.join(__dirname, 'static');
 
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(webpackDevMiddleware(compiler, {
   noInfo: true,
