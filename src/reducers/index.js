@@ -1,9 +1,13 @@
 import navigation from './navigation';
 import beers from './beers';
-import profile from './profile';
+import user from './user';
+import auth from './auth';
+import api from './api';
 
 export default {
   navigation,
   beers,
-  profile
+  user,
+  auth,
+  api
 };

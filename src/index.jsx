@@ -30,7 +30,7 @@ import App from './containers/App.jsx';
 import Home from './components/Home.jsx';
 import BeerListContainer from './containers/BeerListContainer.jsx';
 import ProfileContainer from './containers/ProfileContainer.jsx';
-import Auth from './components/Auth.jsx';
+import Auth from './containers/AuthContainer.jsx';
 
 const store = createStore(
     combineReducers({

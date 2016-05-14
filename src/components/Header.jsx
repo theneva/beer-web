@@ -54,5 +54,5 @@ export default class Header extends Component {
 Header.propTypes = {
   headers: PropTypes.array.isRequired,
   onSelect: PropTypes.func.isRequired,
-  currentUsername: PropTypes.string.isRequired
+  currentUsername: PropTypes.string
 };

@@ -24,12 +24,12 @@ HeaderContainer.propTypes = {
   headers: PropTypes.array.isRequired,
   setActivePage: PropTypes.func.isRequired,
   activePage: PropTypes.string.isRequired,
-  currentUsername: PropTypes.string.isRequired
+  currentUsername: PropTypes.string
 };
 
 const mapStateToProps = state => ({
   ...state.navigation,
-  currentUsername: state.profile.username
+  currentUsername: state.user.username
 });
 
 const mapDispatchToProps = dispatch => ({

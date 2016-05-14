@@ -11,7 +11,7 @@ class BeerListContainer extends Component {
   componentWillMount() {
     const {setBeers} = this.props;
 
-    fetch('http://beers.theneva.com/beers')
+    fetch(this.props.beersUrl)
       .then(res => res.json())
       .then(beers => setBeers(beers))
       .catch(err => console.error('caught error', err));
@@ -33,7 +33,8 @@ BeerListContainer.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  ...state.beers
+  ...state.beers,
+  beersUrl: state.api.beersUrl
 });
 
 const mapDispatchToProps = dispatch => ({
